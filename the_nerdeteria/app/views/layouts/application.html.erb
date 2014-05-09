@@ -3,7 +3,7 @@
 <head>
   <title>TheNerdeteria</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body class="metro">
@@ -32,9 +32,35 @@
       </div>
     </div>
   </nav>
+  <div class="grid">
+    <div class="row">
+      <div class="span3">
+        <nav class="sidebar light">
+          <ul>
+            <li class="title">New</li>
+            <li class="active"><a href="#"><i class="icon-home"></i>Menu Item</a></li>
+            <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Restaurant</a></li>
+            <li class="stick bg-green"><a href="#">Menu Item Category</a></li>
 
-  <%= yield %>
-
+            <li class="title">View</li>
+            <li><a href="#">Other Item 1</a></li>
+            <li><a href="#">Other item 2</a></li>
+            <li><a href="#">Other item 3</a></li>
+            <li>
+              <a class="dropdown-toggle" href="#">Sub menu 2</a>
+              <ul class="dropdown-menu" data-role="metro.dropdown">
+                <li><a href="">Subitem 1</a></li>
+                <li><a href="">Subitem 2</a></li>
+                <li><a href="">Subitem 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="span9"><%= yield %></div>
+    </div>
+  </div>
 </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
