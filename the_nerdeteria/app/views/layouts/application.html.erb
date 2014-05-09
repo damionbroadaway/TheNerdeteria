@@ -6,9 +6,35 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="metro">
+<div class="container">
+  <nav class="navigation-bar">
+    <div class="navigation-bar-content">
+      <a href="/" class="element"><span class="icon-grid-view"></span> Nerdery University<sup>Q2</sup></a>
+      <span class="element-divider"></span>
 
-<%= yield %>
+      <a class="pull-menu" href="#"></a>
 
+      <div class="no-tablet-portrait">
+        <span class="element-divider"></span>
+        <div class="element place-right">
+          <a href="/info">
+            <span class="icon-cog fg-white"></span>
+          </a>
+        </div>
+        <span class="element-divider place-right"></span>
+        <button class="element image-button image-left place-right">
+          <a href="http://nerdery.com/Vd" target="_blank">
+            Damion M Broadaway
+            <img src="http://nerdery.com/system/nerds/normal/vd.png?1357836219">
+          </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <%= yield %>
+
+</div>
 </body>
 </html>
