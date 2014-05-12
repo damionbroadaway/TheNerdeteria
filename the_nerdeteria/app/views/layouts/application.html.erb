@@ -37,15 +37,15 @@
       <div class="span3">
         <nav class="sidebar light">
           <ul>
-            <li class="title">New</li>
-            <li class="active"><a href="#"><i class="icon-home"></i>Menu Item</a></li>
-            <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Restaurant</a></li>
-            <li class="stick bg-green"><a href="#">Menu Item Category</a></li>
+            <li class="title"><i class="icon-plus-2"></i>&nbsp;&nbsp;New</li>
+            <li class=""><%= link_to 'Menu Items', {:controller => 'menu_items', :action=> 'new'} %></li>
+            <li class=""><%= link_to 'Menu Item Categories', {:controller => 'menu_item_catergories', :action=> 'new'} %></li>
+            <li class=""><%= link_to 'Restaurants', {:controller => 'restaurants', :action=> 'new'} %></li>
 
-            <li class="title">View</li>
-            <li><a href="#">Other Item 1</a></li>
-            <li><a href="#">Other item 2</a></li>
-            <li><a href="#">Other item 3</a></li>
+            <li class="title"><i class="icon-glasses-2"></i>&nbsp;&nbsp;View</li>
+            <li class=""><%= link_to 'Menu Items', {:controller => 'menu_items', :action=> 'index'} %></li>
+            <li class=""><%= link_to 'Menu Item Categories', {:controller => 'menu_item_catergories', :action=> 'index'} %></li>
+            <li class=""><%= link_to 'Restaurants', {:controller => 'restaurants', :action=> 'index'} %></li>
 
           </ul>
         </nav>

@@ -1,4 +1,5 @@
 <%= form_for(@menu_item) do |f| %>
+    <fieldset>
   <% if @menu_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
@@ -11,19 +12,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :price %><br>
+  <div class="input-control text" data-role="input-control">
+    <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
+    &nbsp;
+  <div class="input-control text" data-role="input-control">
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :desc %><br>
+      &nbsp;
+  <div class="input-control textarea" data-role="input-control">
+    <%= f.label :desc %>
     <%= f.text_area :desc %>
   </div>
+      &nbsp;
+  <div class="input-control select" data-role="input-control">
+    <label for="restaurantID">Restaurant</label>
+        <%= f.select :restaurantID, options_for_select(@restaurants.map{|p| [p.name, p.id]}, {prompt: 'None'})  %>
+  </div>
+  &nbsp;
+  <div class="input-control select" data-role="input-control">
+    <label for="categoryID">Category</label>
+    <%= f.select :restaurantID, options_for_select(@cats.map{|c| [c.name, c.id]}, {prompt: 'None'})  %>
+  </div>
+  &nbsp;
   <div class="actions">
     <%= f.submit %>
   </div>
+    </fieldset>
 <% end %>
